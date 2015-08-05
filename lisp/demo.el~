@@ -1,0 +1,11 @@
+
+
+(defun demo_detail (mode)
+  "This is a demo"
+  (interactive "Slight or dark? "))
+
+(defun demo_dark ()
+  (interactive)
+  (demo_detail 'dark))
+
+(provide 'demo)
