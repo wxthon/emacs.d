@@ -13,42 +13,36 @@
 (eval-when-compile
   (require 'color-theme))
 
-:q
-
-(defun color-theme-solarized (mode)
+(defun color-theme-atom-one-dark()
   "Color theme by Ethan Schoonover, created 2011-03-24.
 Ported to Emacs by Greg Pfeil, http://ethanschoonover.com/solarized."
-  (interactive "Slight or dark? ")
-  (let ((base03  "#002b36")
-        (base02  "#073642")
-        (base01  "#586e75")
+  (let ((base03  "#282C34") ;; background color
+        (base02  "#282c34")
+        (base01  "#5c6370")
         (base00  "#657b83")
-        (base0   "#839496")
+        (base0   "#abb2ba")
         (base1   "#93a1a1")
         (base2   "#eee8d5")
         (base3   "#fdf6e3")
-        (yellow  "#b58900")
+        (yellow  "#c678d7") ;; type color
         (orange  "#cb4b16")
         (red     "#dc322f")
         (magenta "#d33682")
         (violet  "#6c71c4")
-        (blue    "#268bd2")
-        (cyan    "#2aa198")
+        (blue    "#5cafef")
+        (cyan    "#98c379")
+        (cursor  "#5cafef")
+        (type-color "#4eb6bd")
         (green   "#859900"))
-    (when (eq 'light mode)
-      (rotatef base03 base3)
-      (rotatef base02 base2)
-      (rotatef base01 base1)
-      (rotatef base00 base0))
     (color-theme-install
      `(color-theme-solarized
        ((foreground-color . ,base0)
         (background-color . ,base03)
-        (background-mode . ,mode)
+        ;;(background-mode . ,bg)
         (cursor-color . ,base0))
        ;; basic
        (default ((t (:foreground ,base0))))
-       (cursor ((t (:foreground ,base0 :background ,base03 :inverse-video t))))
+       (cursor ((t (:foreground ,base0 :background ,cursor :inverse-video t))))
        (escape-glyph-face ((t (:foreground ,red))))
        (fringe ((t (:foreground ,base01 :background ,base02))))
        (header-line ((t (:foreground ,base0 :background ,base2))))
@@ -97,10 +91,10 @@ Ported to Emacs by Greg Pfeil, http://ethanschoonover.com/solarized."
        (font-lock-comment-face ((t (:foreground ,base01 :italic t))))
        (font-lock-constant-face ((t (:foreground ,cyan))))
        (font-lock-function-name-face ((t (:foreground ,blue))))
-       (font-lock-keyword-face ((t (:foreground ,green))))
+       (font-lock-keyword-face ((t (:foreground ,yellow))))
        (font-lock-string-face ((t (:foreground ,cyan))))
-       (font-lock-type-face ((t (:foreground ,yellow))))
-       (font-lock-variable-name-face ((t (:foreground ,blue))))
+       (font-lock-type-face ((t (:foreground ,type-color))))
+       (font-lock-variable-name-face ((t (:foreground ,base0))))
        (font-lock-warning-face ((t (:foreground ,red :bold t))))
        ;; info
        (info-xref ((t (:foreground ,blue :underline t))))
@@ -113,21 +107,9 @@ Ported to Emacs by Greg Pfeil, http://ethanschoonover.com/solarized."
        (show-paren-match-face ((t (:background ,cyan :foreground ,base3))))
        (show-paren-mismatch-face ((t (:background ,red :foreground ,base3))))))))
 
-(defun color-theme-solarized-dark ()
-  (interactive)
-  (color-theme-solarized 'dark))
-
-(defun color-theme-solarized-light ()
-  (interactive)
-  (color-theme-solarized 'light))
-
 (add-to-list 'color-themes
-             '(color-theme-solarized-light
-               "Solarized Light"
-               "Ethan Schoonover & Greg Pfeil <greg@technomadic.org>"))
-(add-to-list 'color-themes
-             '(color-theme-solarized-dark
+             '(color-theme-atom-one-dark
                "Solarized Dark"
                "Ethan Schoonover & Greg Pfeil <greg@technomadic.org>"))
 
-(provide 'color-theme-solarized)
+(provide 'color-theme-atom)

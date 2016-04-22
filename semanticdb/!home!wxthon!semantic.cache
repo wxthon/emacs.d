@@ -1,0 +1,19 @@
+;; Object wxthon/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "wxthon/"
+  :tables
+  (list
+    (semanticdb-table "a.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [3 22])
+            ("stdio.h" include (:system-flag t) nil [23 41])
+            ("main" function (:type "int") nil [43 130]))          
+      :file "a.cpp"
+      :pointmax 131
+      :fsize 130
+      :lastmodtime '(22295 19997 96851 393000)
+      :unmatched-syntax '((symbol 39 . 40) (punctuation 38 . 39) (symbol 33 . 38) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24) (symbol 39 . 40) (punctuation 38 . 39) (symbol 33 . 38) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24) (symbol 33 . 34) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24) (symbol 33 . 34) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24) (symbol 33 . 34) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24) (symbol 33 . 34) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24) (symbol 33 . 34) (punctuation 32 . 33) (symbol 24 . 31) (punctuation 23 . 24))))
+  :file "!home!wxthon!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

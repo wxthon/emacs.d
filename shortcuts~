@@ -1,0 +1,7 @@
+
+M-g g/ M-g M-g => goto-line
+C-j => insert a line
+C-f => forward a char
+C-b => backward a char
+C-p => previous a line
+C-n => next a line
