@@ -1,13 +1,17 @@
 ;; Start package.el with emacs
 (require 'package)
-;;(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-;;                         ("marmalade" . "https://marmalade-repo.org/packages/")
-;;                         ("melpa" . "http://melpa.org/packages/")))
-;; Add MELPA to repository list
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(setq package-archives '(("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+						 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 ;; Initialize package module
 (package-initialize)
+
+;; Set color theme
+(require 'color-theme)
+(color-theme-initialize)
+;;(require 'color-theme-sanityinc-solarized)
+;;(color-theme-sanityinc-solarized-light)
+;;(require 'aurora-theme)
 
 ;; Start auto-complete with emacs
 (require 'auto-complete)
@@ -19,6 +23,12 @@
 (defun my:ac-c-header-init()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
+  (add-to-list 'achead:include-directories "/usr/include")
+  (add-to-list 'achead:include-directories "/usr/include/c++/5.3.1")
+  (add-to-list 'achead:include-directories "/usr/include/glog")
+  (add-to-list 'achead:include-directories "/usr/include/linux")
+  (add-to-list 'achead:include-directories "/usr/local/include")
+  (add-to-list 'achead:include-directories "/usr/local/include/boost")
   (add-to-list 'achead:include-directories "/usr/include"))
 ;; Now let's call this function from c/c++ hooks
 (add-hook 'c++-mode-hook 'my:ac-c-header-init)
@@ -26,13 +36,7 @@
 
 ;; Start yasnippet with emacs
 (require 'yasnippet)
-(yas-global-mode 1)
-
-;; Set color theme
-(require 'color-theme)
-(color-theme-initialize)
-(require 'color-theme-solarized)
-(color-theme-solarized-dark)
+(yas-global-mode t)
 
 ;; Start flymake-google-cpplint-load
 ;; Let's define a function for flymake initialization
@@ -41,8 +45,8 @@
   (custom-set-variables
    '(flymake-google-cpplint-command "/usr/bin/cpplint"))
   (flymake-google-cpplint-load))
-(add-hook 'c-mode-hook 'my:flymake-google-init)
-(add-hook 'c++-mode-hook 'my:flymake-google-init)
+;;(add-hook 'c-mode-hook 'my:flymake-google-init)
+;;(add-hook 'c++-mode-hook 'my:flymake-google-init)
 
 ;; Start google-c-style with emacs
 (require 'google-c-style)
@@ -100,7 +104,7 @@
 (setq auto-save-default nil)
 (setq backup-inhibited t) ;; no backup
 
-;; Scroll without entire page
+;; Scroll Without Entire page
 (setq scroll-step 1
       scroll-margin 3
       scroll-conservatively 10000)
@@ -128,18 +132,18 @@
       browse-url-browser-function 'browse-url-generic)
 
 ;; Auto insert quotes
-(setq skeleton-pair-alist
-      '((?\" _ "\"" >)
-	(?\' _ "\'" >)
-	(?\( _ ")" >)
-	(?\[ _ "]" >)
-	(?\{ _ "}" >)))
-(setq skeleton-pair t)
+;;(setq skeleton-pair-alist
+;;      '((?\" _ "\"" >)
+;;	(?\' _ "\'" >)
+;;	(?\( _ ")" >)
+;;	(?\[ _ "]" >)
+;;	(?\{ _ "}" >)))
+;;(setq skeleton-pair t)
 
 (mapcar
  (function (lambda (setting)
-	     (setq auto-mode-alist
-		   (cons setting auto-mode-alist))))
+			 (setq auto-mode-alist
+				   (cons setting auto-mode-alist))))
  '(("\\.xml$" . sgml-mode)
    ("\\.org\\'" . org-mode)
    ("\\\.bash" . sh-mode)
