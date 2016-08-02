@@ -7,10 +7,13 @@
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/github")
 
+(setq default-directory "/usr/local/bin")
+
 (load "init-base")
 (load "init-key")
-(load "init-ctags")
-(load "init-ggtags")
+(load "init-xcscope")
+;;(load "init-ctags")
+;;(load "init-ggtags")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
