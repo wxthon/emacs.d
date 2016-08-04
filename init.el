@@ -1,3 +1,9 @@
+(server-start)
+;; check emacs version
+(if (version< emacs-version "24.4")
+    (message "is before 24.4")
+  (message "is 24.4 or after"))
+
 ;; disable startup message
 (setq inhibit-startup-message t)
 (setq inhibit-splash-screen t)
@@ -7,11 +13,12 @@
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/github")
 
-(setq default-directory "/usr/local/bin")
+(setq default-directory "/path/repositories")
 
 (load "init-base")
 (load "init-key")
 (load "init-xcscope")
+(load "init-switch-window")
 ;;(load "init-ctags")
 ;;(load "init-ggtags")
 (custom-set-variables

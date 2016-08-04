@@ -723,7 +723,7 @@ rounded up to keep whole sets of cscope output"
   :type 'integer
   :group 'cscope)
 
-(defcustom cscope-program "/usr/local/bin/cscope"
+(defcustom cscope-program "cscope"
   "The pathname of the cscope executable to use. This could be a
 string, or a function. If a function, then this is called every
 time the program path is needed to retrieve the path. The

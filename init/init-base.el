@@ -58,7 +58,7 @@
 (global-undo-tree-mode)
 
 ;; Disable menu bar
-(menu-bar-mode -1)
+;;(menu-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; Show line number
