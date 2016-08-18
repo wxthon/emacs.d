@@ -9,9 +9,18 @@
 ;; Set color theme
 (require 'color-theme)
 (color-theme-initialize)
-;;(require 'color-theme-sanityinc-solarized)
-;;(color-theme-sanityinc-solarized-light)
-;;(require 'aurora-theme)
+
+
+;;(if (display-graphic-p)
+;;	(progn
+;;        (require 'dracula-theme))
+;;	(require 'sanityinc-solarized-light-theme))
+
+;;(require 'color-theme-solarized)
+;;(color-theme-solarized-dark)
+(require 'molokai-theme)
+(setq molokai-theme-kit t)
+
 
 ;; Start auto-complete with emacs
 (require 'auto-complete)
