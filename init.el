@@ -12,7 +12,17 @@
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/github")
 
-(setq default-directory "/path/repositories")
+(if (eq system-type 'darwin)
+	(setq default-directory "/Volumes/Data/repositories")
+  (setq default-directory "/path/repositories")
+  )
+
+;; key bindings
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-option-modifier 'alt)
+  (setq mac-command-modifier 'meta)
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+  )
 
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
