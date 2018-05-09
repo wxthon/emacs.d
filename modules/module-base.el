@@ -142,13 +142,13 @@
 (require 'auto-indent-mode)
 (auto-indent-global-mode)
 
-(require 'auto-package-update)
+;;(require 'auto-package-update)
 
-(when (require 'automargin nil t)
-  (automargin-mode 1))
+;;(when (require 'automargin nil t)
+;;  (automargin-mode 1))
 
-;;(require 'centered-cursor-mode)
-;;(global-centered-cursor-mode 1)
+(require 'centered-cursor-mode)
+(global-centered-cursor-mode 1)
 
 (require 'autopair)
 ;;(autopair-global-mode) ;; to enable in all buffers
