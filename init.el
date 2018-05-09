@@ -1,16 +1,10 @@
-;; check emacs version
-(if (version< emacs-version "24.4")
-    (message "is before 24.4")
-  (message "is 24.4 or after"))
 
-;; disable startup message
-(setq inhibit-startup-message t)
-(setq inhibit-splash-screen t)
 
-;; Add ~/.emacs.d/lisp to load-path
-(add-to-list 'load-path "~/.emacs.d/cool")
-(add-to-list 'load-path "~/.emacs.d/init")
-(add-to-list 'load-path "~/.emacs.d/github")
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;(package-initialize)
 
 (if (eq system-type 'darwin)
 	(setq default-directory "/Volumes/Data/repositories")
@@ -22,34 +16,67 @@
   (setq mac-option-modifier 'alt)
   (setq mac-command-modifier 'meta)
   (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+
+(defun init-base()
+  ;; Add ~/.emacs.d/modules to load-path
+  (add-to-list 'load-path "~/.emacs.d/modules")
+  ;;(add-to-list 'load-path "~/.emacs.d/github")
+  
+  ;; disable startup message
+  (setq inhibit-startup-message t)
+  (setq inhibit-splash-screen t)
   )
 
+(defun load-module (m)
+  (defvar name (format "module-%s" m))
+  (message name)
+  (load name))
+
+(defun load-modules()
+  (load-module "base")
+  (load-module "cpp"))
+
+(defun ui-init ()
+  (message "emacs run with GUI mode")
+  ;; do something
+  )
+
+(defun console-init()
+  (message "emacs run with console mode")
+  ;; do something
+  )
+
+(defun common-init()
+  (init-base)
+  (load-modules))
+
+;;(setq default-directory "/path/repositories")
+
+;; c-mode hooks
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
 (add-hook 'c-mode 'set-newline-and-indent)
 
-(electric-indent-mode)
 
-(load "init-base")
-(load "init-key")
-(load "init-xcscope")
-(load "init-switch-window")
-;;(load "init-ctags")
+;;(electric-indent-mode)
+;;(global-auto-revert-mode t)
+
+
+;;(load-module "key")
+;;(load-module "xcscope")
+;;(load-module "switch-window")
+;;(load-module "ctags")
 ;;(load "init-ggtags")
 
-;; It's best
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(display-time-mode t)
- '(show-paren-mode t)
- '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "Monaco" :foundry "APPL" :slant normal :weight normal :height 120 :width normal)))))
+;; init common
+(common-init)
+
+;; init ui or console
+(if (display-graphic-p)
+    (ui-init)
+  (console-init))
+
+
+;;(if (version< emacs-version "24.4")
+;;    (message "is before 24.4")
+;;  (message "is 24.4 or after"))
