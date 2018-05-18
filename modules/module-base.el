@@ -9,15 +9,17 @@
 
 (if (display-graphic-p)
     (progn
-	  (require 'zenburn-theme)
-      )
+	  ;;(require 'zenburn-theme)
+	  (require 'atom-one-dark-theme)
+	  )
   (progn
-	(require 'zenburn-theme)
+	;;(require 'zenburn-theme)
+    (require 'atom-one-dark-theme)
     ))
 
 
 ;; Disable menu bar
-;;(menu-bar-mode -1)
+(menu-bar-mode -1)
 (tool-bar-mode -1)
 
 ;; Show line number
@@ -147,8 +149,8 @@
 ;;(when (require 'automargin nil t)
 ;;  (automargin-mode 1))
 
-(require 'centered-cursor-mode)
-(global-centered-cursor-mode 1)
+;;(require 'centered-cursor-mode)
+;;(global-centered-cursor-mode 1)
 
 (require 'autopair)
 ;;(autopair-global-mode) ;; to enable in all buffers
