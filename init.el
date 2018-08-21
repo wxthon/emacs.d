@@ -77,7 +77,7 @@
   (console-init))
 
 
-(setq-default line-spacing 0.25)
+(setq-default line-spacing 0.15)
 ;;(require 'minimap)
 
 ;; set default font in initial window and for any new window
@@ -87,26 +87,27 @@
     (add-to-list 'initial-frame-alist '(font . "DejaVu Sans Mono-10"))
     (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-10"))))
  ((string-equal system-type "darwin") ; macOS
-  (when (member "Menlo" (font-family-list))
-    (add-to-list 'initial-frame-alist '(font . "Menlo"))
-    (add-to-list 'default-frame-alist '(font . "Menlo"))))
+  (when (member "Monaco" (font-family-list))
+    (add-to-list 'initial-frame-alist '(font . "Monaco-14"))
+    (add-to-list 'default-frame-alist '(font . "Monaco-14"))))
  ((string-equal system-type "gnu/linux") ; linux
   (when (member "Monaco" (font-family-list))
-    (add-to-list 'initial-frame-alist '(font . "Monaco"))
-    (add-to-list 'default-frame-alist '(font . "Monaco")))))
+    (add-to-list 'initial-frame-alist '(font . "Monaco-14"))
+    (add-to-list 'default-frame-alist '(font . "Monaco-14")))))
 
 ;;(if (version< emacs-version "24.4")
 ;;    (message "is before 24.4")
 ;;  (message "is 24.4 or after"))
-;'(default ((t (:family "Monaco" :foundry "APPL" :slant normal :weight normal :height 120 :width normal)))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (http-post-simple neotree auctex minimap atom-one-dark-theme zenburn-theme uuidgen uuid undo-tree switch-window swap-buffers sed-mode python-pylint python-mode php-auto-yasnippets molokai-theme markdown-preview-eww markdown-mode javap-mode javaimp javadoc-lookup java-imports iedit hl-spotlight haskell-snippets groovy-mode gradle-mode google-c-style go-snippets go-mode flymake-google-cpplint flymake-cursor finder+ find-file-in-repository elpygen elpy ctags-update ctags crosshairs common-lisp-snippets comment-tags cmake-project cmake-font-lock centered-cursor-mode bind-map bind-key basic-c-compile autopair autobookmarks auto-yasnippet auto-virtualenv auto-org-md auto-minor-mode auto-highlight-symbol auto-complete-c-headers anaconda-mode ag ace-window ac-php ac-html-csswatcher ac-html-bootstrap ac-html ac-c-headers))))
+ '(column-number-mode t)
+ '(display-time-mode t)
+ '(menu-bar-mode nil)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

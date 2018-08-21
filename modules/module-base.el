@@ -9,11 +9,11 @@
 
 (if (display-graphic-p)
     (progn
-	  ;;(require 'zenburn-theme)
-	  (require 'atom-one-dark-theme)
-	  )
+      ;;(require 'zenburn-theme)
+      (require 'atom-one-dark-theme)
+      )
   (progn
-	;;(require 'zenburn-theme)
+    ;;(require 'zenburn-theme)
     (require 'atom-one-dark-theme)
     ))
 
@@ -71,10 +71,10 @@
       scroll-conservatively 10000)
 
 ;; Keep cursor at the end of line when move upon/down
-(setq track-eol t)
+;;(setq track-eol t)
 
 ;; Delete all contents between cursor and line end
-(setq-default kill-whole-line t)
+;;(setq-default kill-whole-line t)
 
 ;; Ignore ring notice
 (setq ring-bell-function 'ignore)
@@ -141,8 +141,8 @@
 ;;(global-hl-line-mode t)
 ;;(set-face-background 'hl-line "#004652")
 
-(require 'auto-indent-mode)
-(auto-indent-global-mode)
+;;(require 'auto-indent-mode)
+;;(auto-indent-global-mode)
 
 ;;(require 'auto-package-update)
 
@@ -157,8 +157,8 @@
 ;;(add-hook 'c-mode-common-hook #'(lambda () (autopair-mode)))
 (add-hook 'c-mode-common-hook
           #'(lambda ()
-            (setq autopair-dont-activate t)
-            (autopair-mode -1)))
+			  (setq autopair-dont-activate t)
+			  (autopair-mode -1)))
 
 
 ;;(autoload 'bash-completion-dynamic-complete \"bash-completion\"
