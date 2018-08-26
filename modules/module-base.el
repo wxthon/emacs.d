@@ -10,7 +10,8 @@
 (if (display-graphic-p)
     (progn
       ;;(require 'zenburn-theme)
-      (require 'atom-one-dark-theme)
+      ;;(require 'atom-one-dark-theme)
+      (require 'solarized-light-theme)
       )
   (progn
     ;;(require 'zenburn-theme)
@@ -127,8 +128,8 @@
 (ac-config-default)
 
 ;; Start yasnippet with emacs
-(require 'yasnippet)
-(yas-global-mode t)
+;;(require 'yasnippet)
+;;(yas-global-mode t)
 
 ;; Start undo-tree.el
 (require 'undo-tree)
