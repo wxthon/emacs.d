@@ -17,21 +17,43 @@
 	 ("\\.rkt$" . scheme-mode)
 	 ("\\.idl$" . idl-mode)))
 
+  ;; enable auto-complete with emacs
+  (require 'auto-complete)
+  (global-auto-complete-mode)
+  
+  ;; enaeble auto complete for c
+  (require 'auto-complete-c-headers)
+  (add-to-list 'ac-sources 'ac-source-c-headers)
 
-  ;; Start auto-complete with emacs
-  ;;(require 'auto-complete)
-  ;;(global-auto-complete-mode)
+  ;; enable auto indent
+  (require 'auto-indent-mode)
+  (auto-indent-global-mode)
+
+  ;; enable yasnippet with emacs
+  (add-to-list 'load-path
+               "~/path-to-yasnippet")
+  (require 'yasnippet)
+  (yas-global-mode 1)
+
+  (require 'yasnippet-snippets)
+
+  ;; enable undo-tree.el
+  (require 'undo-tree)
+  (global-undo-tree-mode)
+
+  ;; enable auto update for all packages
+  (require 'auto-package-update)
+
+  ;; enable centered cursor of buffer
+  (require 'centered-cursor-mode)
+  (global-centered-cursor-mode 1)
+
+  ;; enable cmake-mode
+  (require 'cmake-mode)
+  
   ;; Do default config for auto-complete
   ;;(require 'auto-complete-config)
   ;;(ac-config-default)
-
-  ;; Start yasnippet with emacs
-  ;;(require 'yasnippet)
-  ;;(yas-global-mode t)
-
-  ;; Start undo-tree.el
-  ;;(require 'undo-tree)
-  ;;(global-undo-tree-mode)
 
   ;;(require 'auto-highlight-symbol)
   ;;(global-auto-highlight-symbol-mode t)
@@ -39,17 +61,9 @@
   ;;(require 'hl-line+)
   ;;(global-hl-line-mode t)
   ;;(set-face-background 'hl-line "#004652")
-
-  ;;(require 'auto-indent-mode)
-  ;;(auto-indent-global-mode)
-
-  ;;(require 'auto-package-update)
-
+  
   ;;(when (require 'automargin nil t)
   ;;  (automargin-mode 1))
-
-  ;;(require 'centered-cursor-mode)
-  ;;(global-centered-cursor-mode 1)
 
   ;;(require 'autopair)
   ;;(autopair-global-mode) ;; to enable in all buffers

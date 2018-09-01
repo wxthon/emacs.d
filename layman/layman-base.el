@@ -89,6 +89,9 @@
   ;;	(?\[ _ "]" >)
   ;;	(?\{ _ "}" >)))
   ;;(setq skeleton-pair t)
+
+  ;;open up with full screen
+  (setq initial-frame-alist (quote ((fullscreen . maximized))))
   )
 
 (layman/register-hook 'common 'layman/base)

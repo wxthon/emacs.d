@@ -23,6 +23,11 @@
   ;;(set-process-query-on-exit-flag proc nil))
 )
 
+(defun layman/window-maximized () 
+  (interactive) 
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+  (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
+
 (defun layman/set-global-keys ()
   (global-unset-key "\C-z")
 
@@ -71,13 +76,7 @@
   (global-set-key [(f10)] 'bookmark-set)
   (global-set-key [(f12)] 'desktop-save)
 
-  ;; (global-set-key [f11] 'my-maximized) 
-  ;; (defun my-maximized () 
-  ;;     (interactive) 
-  ;;     (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-  ;;     (x-send-client-message nil 0 nil "_NET_WM_STATE" 32 '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
-
-
+  (global-set-key [f11] 'layman/window-maximized)
 
   (require 'ibuffer)
   (global-set-key (kbd "C-x C-b") 'ibuffer)
