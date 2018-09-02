@@ -9,7 +9,6 @@
 ;; boot into my program world
 (load "~/.emacs.d/layman/layman.el")
 (layman/booting)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -17,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(go-mode google-c-style hl-anything hl-indent hl-todo cmake-mode yasnippet-snippets centered-cursor-mode auto-package-update undo-tree yasnippet auto-complete auto-complete-c-headers auto-indent-mode solarized-theme))))
+	(doom-themes minimap mode-icons yasnippet-snippets undo-tree spaceline solarized-theme ibuffer-projectile ibuffer-git hl-todo hl-indent hl-anything google-c-style go-mode cmake-mode centered-cursor-mode auto-package-update auto-indent-mode atom-one-dark-theme ac-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

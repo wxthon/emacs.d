@@ -6,3 +6,4 @@ eshell
 tramp
 session.*
 elpa.bak
+\.#*

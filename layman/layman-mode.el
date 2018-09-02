@@ -1,5 +1,5 @@
 
-(defun layman/mode-control ()
+(defun layman/mode-global ()
   (mapcar
    (function (lambda (setting)
 			   (setq auto-mode-alist
@@ -21,6 +21,9 @@
   ;; enable auto-complete with emacs
   (require 'auto-complete)
   (global-auto-complete-mode)
+  
+  ;; Do default config for auto-complete
+  (ac-config-default)
 
   ;; enable auto indent
   (require 'auto-indent-mode)
@@ -57,10 +60,28 @@
   (require 'hl-todo)
   (global-hl-todo-mode)
 
-  ;; Do default config for auto-complete
-  ;;(require 'auto-complete-config)
-  ;;(ac-config-default)
+  (require 'ibuffer-projectile)
+  (require 'ibuffer-git)
+  
+  (require 'projectile)
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+  (require 'powerline)
+  ;;(powerline-default-theme)
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme)
+
+  (if (display-graphic-p)
+	  (progn
+		(require 'mode-icons)
+		(mode-icons-mode)
+		))
+
+  (require 'minimap)
+  ;;(minimap-mode)
+  
   ;;(require 'auto-highlight-symbol)
   ;;(global-auto-highlight-symbol-mode t)
 
@@ -83,21 +104,28 @@
   ;;  \"BASH completion hook\")
   ;;(add-hook 'shell-dynamic-complete-functions
   ;;'bash-completion-dynamic-complete)
-
-  (layman/mode-custom)
   )
 
-(defun layman/mode-custom ()
+(defun layman/c-or-c++-custom (mode-hook)
   (require 'google-c-style)
-  (add-hook 'c-mode-common-hook 'google-set-c-style)
-  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-
-  (add-hook 'c-mode-common-hook 
-			(lambda () 
-			  ;; enaeble auto complete for c
-			  (require 'auto-complete-c-headers)
-			  (add-to-list 'ac-sources 'ac-source-c-headers)
-			  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+  (add-hook mode-hook 'google-set-c-style)
+  (add-hook mode-hook 'google-make-newline-indent)
+  
+  (require 'ac-c-headers)
+  (add-hook mode-hook
+            (lambda () 
+              ;; enaeble auto complete for c
+              (add-to-list 'ac-sources 'ac-source-c-headers)
+              (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
 )
+
+(defun layman/mode-custom ()
+  (layman/c-or-c++-custom 'c-mode-hook)
+  (layman/c-or-c++-custom 'c++-mode-hook)
+  )
+
+(defun layman/mode-control ()
+  (layman/mode-global)
+  (layman/mode-custom))
 
 (layman/register-hook 'common 'layman/mode-control)
