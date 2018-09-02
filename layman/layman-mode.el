@@ -15,15 +15,12 @@
 	 ("gnus" . emacs-lisp-mode)
 	 ("\\.py$" . python-mode)
 	 ("\\.rkt$" . scheme-mode)
-	 ("\\.idl$" . idl-mode)))
+	 ("\\.idl$" . idl-mode)
+	 ("\\.go$" . go-mode)))
 
   ;; enable auto-complete with emacs
   (require 'auto-complete)
   (global-auto-complete-mode)
-  
-  ;; enaeble auto complete for c
-  (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
 
   ;; enable auto indent
   (require 'auto-indent-mode)
@@ -50,7 +47,16 @@
 
   ;; enable cmake-mode
   (require 'cmake-mode)
+
+  (require 'hl-anything)
+  (global-hl-line-mode)
+
+  (require 'hl-indent)
+  (hl-indent-mode)
   
+  (require 'hl-todo)
+  (global-hl-todo-mode)
+
   ;; Do default config for auto-complete
   ;;(require 'auto-complete-config)
   ;;(ac-config-default)
@@ -77,6 +83,21 @@
   ;;  \"BASH completion hook\")
   ;;(add-hook 'shell-dynamic-complete-functions
   ;;'bash-completion-dynamic-complete)
+
+  (layman/mode-custom)
   )
+
+(defun layman/mode-custom ()
+  (require 'google-c-style)
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
+  (add-hook 'c-mode-common-hook 
+			(lambda () 
+			  ;; enaeble auto complete for c
+			  (require 'auto-complete-c-headers)
+			  (add-to-list 'ac-sources 'ac-source-c-headers)
+			  (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+)
 
 (layman/register-hook 'common 'layman/mode-control)

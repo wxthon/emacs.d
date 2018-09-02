@@ -17,7 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(cmake-mode yasnippet-snippets centered-cursor-mode auto-package-update undo-tree yasnippet auto-complete auto-complete-c-headers auto-indent-mode solarized-theme))))
+	(go-mode google-c-style hl-anything hl-indent hl-todo cmake-mode yasnippet-snippets centered-cursor-mode auto-package-update undo-tree yasnippet auto-complete auto-complete-c-headers auto-indent-mode solarized-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
