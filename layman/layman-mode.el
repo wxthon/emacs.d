@@ -110,6 +110,12 @@
   (require 'google-c-style)
   (add-hook mode-hook 'google-set-c-style)
   (add-hook mode-hook 'google-make-newline-indent)
+
+  ;; enable irony mode
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'objc-mode-hook 'irony-mode)
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
   
   (require 'ac-c-headers)
   (add-hook mode-hook

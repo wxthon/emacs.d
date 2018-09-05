@@ -2,6 +2,9 @@
 
 ;; set default font in initial window and for any new window
 (defun layman/set-default-font()
+  (when (member "Monospace" (font-family-list))
+    (add-to-list 'initial-frame-alist '(font . "Monospace-14"))
+    (add-to-list 'default-frame-alist '(font . "Monospace-14")))
   (when (member "Monaco" (font-family-list))
     (add-to-list 'initial-frame-alist '(font . "Monaco-14"))
     (add-to-list 'default-frame-alist '(font . "Monaco-14")))

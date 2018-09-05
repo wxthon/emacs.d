@@ -16,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-	(doom-themes minimap mode-icons yasnippet-snippets undo-tree spaceline solarized-theme ibuffer-projectile ibuffer-git hl-todo hl-indent hl-anything google-c-style go-mode cmake-mode centered-cursor-mode auto-package-update auto-indent-mode atom-one-dark-theme ac-c-headers))))
+	(irony doom-themes minimap mode-icons yasnippet-snippets undo-tree spaceline solarized-theme ibuffer-projectile ibuffer-git hl-todo hl-indent hl-anything google-c-style go-mode cmake-mode centered-cursor-mode auto-package-update auto-indent-mode atom-one-dark-theme ac-c-headers))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
