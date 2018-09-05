@@ -79,8 +79,11 @@
 		(mode-icons-mode)
 		))
 
-  (require 'minimap)
+  ;;(require 'minimap)
   ;;(minimap-mode)
+
+  (require 'ac-html)
+
   
   ;;(require 'auto-highlight-symbol)
   ;;(global-auto-highlight-symbol-mode t)
