@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "py-test" "20151117.622" "A test runner for Python code." '((dash "2.9.0") (f "0.17") (emacs "24.4")) :commit "3b2a0bdaacb54df6f2bee8317423e5c0d159d5cf" :keywords '("python" "testing" "py.test") :authors '(("Bogdan Paul Popa" . "popa.bogdanp@gmail.com")) :maintainer '("Bogdan Paul Popa" . "popa.bogdanp@gmail.com") :url "https://github.com/Bogdanp/py-test.el")

@@ -84,6 +84,14 @@
 
   (require 'ac-html)
 
+  (require 'py-autopep8)
+  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+
+
+  (autoload 'pylint "pylint")
+  (add-hook 'python-mode-hook 'pylint-add-menu-items)
+  (add-hook 'python-mode-hook 'pylint-add-key-bindings)
+
   
   ;;(require 'auto-highlight-symbol)
   ;;(global-auto-highlight-symbol-mode t)
