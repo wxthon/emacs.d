@@ -1,5 +1,5 @@
 
-(defun layman/mode-global ()
+(defun layman/mode-matches ()
   (mapcar
    (function (lambda (setting)
 			   (setq auto-mode-alist
@@ -17,6 +17,9 @@
 	 ("\\.rkt$" . scheme-mode)
 	 ("\\.idl$" . idl-mode)
 	 ("\\.go$" . go-mode)))
+  )
+
+(defun layman/mode-global ()
 
   ;; enable auto-complete with emacs
   (require 'auto-complete)
@@ -42,7 +45,7 @@
   (global-undo-tree-mode)
 
   ;; enable auto update for all packages
-  (require 'auto-package-update)
+  ;;(require 'auto-package-update)
 
   ;; enable centered cursor of buffer
   (require 'centered-cursor-mode)
@@ -73,12 +76,6 @@
   (require 'spaceline-config)
   (spaceline-spacemacs-theme)
 
-  (if (display-graphic-p)
-	  (progn
-		(require 'mode-icons)
-		(mode-icons-mode)
-		))
-
   ;;(require 'minimap)
   ;;(minimap-mode)
 
@@ -92,6 +89,7 @@
   (add-hook 'python-mode-hook 'pylint-add-menu-items)
   (add-hook 'python-mode-hook 'pylint-add-key-bindings)
 
+  (require 'electric-spacing)
   
   ;;(require 'auto-highlight-symbol)
   ;;(global-auto-highlight-symbol-mode t)
@@ -123,10 +121,10 @@
   (add-hook mode-hook 'google-make-newline-indent)
 
   ;; enable irony mode
-  (add-hook 'c++-mode-hook 'irony-mode)
-  (add-hook 'c-mode-hook 'irony-mode)
-  (add-hook 'objc-mode-hook 'irony-mode)
-  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+  ;;(add-hook 'c++-mode-hook 'irony-mode)
+  ;;(add-hook 'c-mode-hook 'irony-mode)
+  ;;(add-hook 'objc-mode-hook 'irony-mode)
+  ;;(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
   
   (require 'ac-c-headers)
   (add-hook mode-hook
@@ -139,6 +137,8 @@
 (defun layman/mode-custom ()
   (layman/c-or-c++-custom 'c-mode-hook)
   (layman/c-or-c++-custom 'c++-mode-hook)
+  ;;(require 'phpcbf)
+  ;;(add-hook 'php-mode-hook 'phpcbf-enable-on-save)
   )
 
 (defun layman/mode-control ()
@@ -146,3 +146,12 @@
   (layman/mode-custom))
 
 (layman/register-hook 'common 'layman/mode-control)
+
+
+;; Ignoring electric indentation
+(defun electric-indent-ignore-python (char)
+  "Ignore electric indentation for python-mode"
+  (if (equal major-mode 'php-mode)
+      'no-indent
+    nil))
+(add-hook 'electric-indent-functions 'electric-indent-ignore-python)

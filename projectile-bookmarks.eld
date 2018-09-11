@@ -1,1 +1,0 @@
-("/path/my_repositories/FFA/stock_robot/" "~/.emacs.d/" "/path/repositories/mongodb/mongo/" "/path/repositories/DeepLearning/paddlepaddle/Paddle/" "/path/repositories/chromium/")

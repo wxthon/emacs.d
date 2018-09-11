@@ -31,7 +31,7 @@
   (global-font-lock-mode t)
 
   ;; Custom intent
-  (setq standard-indent 2)
+  ;;(setq standard-indent 2)
   
   ;; Support share clipboard with other applications
   (setq x-select-enable-clipboard t)
@@ -44,9 +44,9 @@
 
   ;; Set default tab intent
   (setq tab-width 4
-	indent-tabs-mode t
-	c-basic-offset 4)
-  (setq default-tab-width 4)
+		indent-tabs-mode t
+		c-basic-offset 4)
+  ;;(setq default-tab-width 4)
 
   ;; Drop temp file
   (setq make-backup-files nil)
