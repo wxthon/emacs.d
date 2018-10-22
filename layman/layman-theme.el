@@ -1,21 +1,13 @@
 
 
 (defun layman/set-theme ()
+  (require 'solarized-theme)
   (if (display-graphic-p)
       (progn
-	;;(require 'zenburn-theme)
-	(require 'atom-one-dark-theme)
-        ;;(require 'solarized-light-theme)
-	)
+	(load-theme 'solarized-light t))
     (progn
-      (require 'zenburn-theme)
-      ;;(require 'atom-one-dark-theme)
-      ;;(require 'solarized-light-theme)
+      (load-theme 'solarized-light t)
       )
     )
 )
-
-;;(require 'doom-themes)
-;;(load-theme 'doom-dracula t)
-;;(load-theme 'doom-one t)
 (layman/register-hook 'common 'layman/set-theme)

@@ -35,7 +35,7 @@
 
 ;; load all layman modules
 (defun layman/load-modules ()
-  (let ((common-modules (list 'welcome 'package 'base 'keys 'font 'theme 'mode)))
+  (let ((common-modules (list 'welcome 'keys 'package 'base 'font 'theme 'mode 'proxy)))
     (dolist (m common-modules)
       (layman/load-module m))))
 

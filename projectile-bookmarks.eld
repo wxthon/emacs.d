@@ -1,0 +1,1 @@
+("/Volumes/Data/my_repositories/stock_robot/" "~/.emacs.d/" "/Volumes/Data/repositories/rnnoise/" "~/practise/")

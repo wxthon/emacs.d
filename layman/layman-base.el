@@ -94,4 +94,17 @@
   (setq initial-frame-alist (quote ((fullscreen . maximized))))
   )
 
+(defun layman/mac-base()
+  (setenv "PATH"
+	  (concat "/Library/TeX/texbin/" ":"
+		  "/usr/local/miniconda2/bin" ":"
+		  "/usr/local/miniconda3/bin" ":"
+		  (getenv "PATH")
+		  )
+	  )
+  (add-to-list 'exec-path "/usr/local/miniconda2/bin")
+  (add-to-list 'exec-path "/usr/local/miniconda3/bin")
+  )
+
 (layman/register-hook 'common 'layman/base)
+(layman/register-hook 'mac 'layman/mac-base)
