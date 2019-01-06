@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "hl-anything" "hl-anything.el" (23490 59232
-;;;;;;  78873 66000))
+;;;### (autoloads nil "hl-anything" "hl-anything.el" (23532 3429
+;;;;;;  586647 806000))
 ;;; Generated autoloads from hl-anything.el
 
 (autoload 'hl-configuration "hl-anything" "\
@@ -89,8 +89,8 @@ Minor mode to highlight the enclosing parentheses and more.
 
 ;;;***
 
-;;;### (autoloads nil nil ("hl-anything-pkg.el") (23490 59232 82385
-;;;;;;  790000))
+;;;### (autoloads nil nil ("hl-anything-pkg.el") (23532 3429 594647
+;;;;;;  773000))
 
 ;;;***
 
