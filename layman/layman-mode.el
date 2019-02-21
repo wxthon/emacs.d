@@ -63,18 +63,18 @@
   (require 'hl-todo)
   (global-hl-todo-mode)
 
-  (require 'ibuffer-projectile)
-  (require 'ibuffer-git)
+  ;;(require 'ibuffer-projectile)
+  ;;(require 'ibuffer-git)
   
-  (require 'projectile)
-  (projectile-mode +1)
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  ;;(require 'projectile)
+  ;;(projectile-mode)
+  ;;(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  ;;(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-  (require 'powerline)
+  ;;(require 'powerline)
   ;;(powerline-default-theme)
-  (require 'spaceline-config)
-  (spaceline-spacemacs-theme)
+  ;;(require 'spaceline-config)
+  ;;(spaceline-spacemacs-theme)
 
   ;;(require 'minimap)
   ;;(minimap-mode)
@@ -89,8 +89,8 @@
   (add-hook 'python-mode-hook 'pylint-add-menu-items)
   (add-hook 'python-mode-hook 'pylint-add-key-bindings)
 
-  (require 'electric-spacing)
-  (add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
+  ;;(require 'electric-spacing)
+  ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 
   (highlight-doxygen-global-mode t)
   
@@ -117,14 +117,14 @@
   ;;(add-hook 'shell-dynamic-complete-functions
   ;;'bash-completion-dynamic-complete)
 
-  (require 'org)
-  (setq org-src-fontify-natively t)
+  ;;(require 'org)
+  ;;(setq org-src-fontify-natively t)
 
   (require 'helm)
   (global-set-key (kbd "M-x") #'helm-M-x)
   (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
   (global-set-key (kbd "C-x C-f") #'helm-find-files)
-  (helm-mode 1)
+  (helm-mode)
   )
 
 (defun layman/c-or-c++-custom (mode-hook)
@@ -166,4 +166,4 @@
   (if (equal major-mode 'php-mode)
       'no-indent
     nil))
-(add-hook 'electric-indent-functions 'electric-indent-ignore-python)
+;;(add-hook 'electric-indent-functions 'electric-indent-ignore-python)

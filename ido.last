@@ -1,0 +1,26 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/path/practise/cpp/" . "CMakeFiles/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ 
+)
+
+;; ----- ido-work-file-list -----
+(
+ 
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/path/practise/cpp/CMakeFiles/" (23433 8261 855656 164000) "feature_tests.c" "./" "CMakeDirectoryInformation.cmake" "../" "TargetDirectories.txt" "CMakeTmp/" "Makefile.cmake" "3.10.2/" "feature_tests.bin" "progress.marks" "Practise.dir/" "CMakeOutput.log" "feature_tests.cxx" "Makefile2" "cmake.check_cache")
+
+ ("/path/practise/cpp/" (23660 61148 998611 426000) "./" "../" "gtest/" "cmake_install.cmake" "Practise" "array.cpp" "CMakeLists.txt" "CMakeCache.txt" "CMakeFiles/" "main.cpp" "Makefile" "math/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

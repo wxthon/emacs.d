@@ -1,0 +1,1 @@
+("~/company/ptt/" "~/.emacs.d/" "/path/practise/cpp/" "/path/repositories/rnnoise/" "/path/my_repositories/stock_robot/" "/path/my_repositories/powerful_workspace/" "/path/company/chatserver/" "/path/repositories/rnnoise-nu/" "/path/repositories/WebRTC_AGC/")
