@@ -7,3 +7,4 @@ tramp
 session.*
 elpa.bak
 \.#*
+projectile-bookmarks.eld
