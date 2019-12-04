@@ -92,7 +92,6 @@
   ;;(require 'electric-spacing)
   ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 
-  (highlight-doxygen-global-mode t)
   
   ;;(require 'auto-highlight-symbol)
   ;;(global-auto-highlight-symbol-mode t)
