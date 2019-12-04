@@ -29,12 +29,12 @@
   (ac-config-default)
 
   ;; enable auto indent
-  (require 'auto-indent-mode)
-  (auto-indent-global-mode)
+  ;;(require 'auto-indent-mode)
+  ;;(auto-indent-global-mode)
 
   ;; enable yasnippet with emacs
-  (add-to-list 'load-path
-               "~/path-to-yasnippet")
+  (add-to-list 'load-path "~/path-to-yasnippet")
+  
   (require 'yasnippet)
   (yas-global-mode 1)
 
@@ -57,8 +57,8 @@
   (require 'hl-anything)
   (global-hl-line-mode)
 
-  (require 'hl-indent)
-  (hl-indent-mode)
+  ;;(require 'hl-indent)
+  ;;(hl-indent-mode)
   
   (require 'hl-todo)
   (global-hl-todo-mode)
@@ -81,13 +81,13 @@
 
   (require 'ac-html)
 
-  (require 'py-autopep8)
-  (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+  ;;(require 'py-autopep8)
+  ;;(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 
-  (autoload 'pylint "pylint")
-  (add-hook 'python-mode-hook 'pylint-add-menu-items)
-  (add-hook 'python-mode-hook 'pylint-add-key-bindings)
+  ;;(autoload 'pylint "pylint")
+  ;;(add-hook 'python-mode-hook 'pylint-add-menu-items)
+  ;;(add-hook 'python-mode-hook 'pylint-add-key-bindings)
 
   ;;(require 'electric-spacing)
   ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
@@ -158,12 +158,3 @@
   (layman/mode-custom))
 
 (layman/register-hook 'common 'layman/mode-control)
-
-
-;; Ignoring electric indentation
-(defun electric-indent-ignore-python (char)
-  "Ignore electric indentation for python-mode"
-  (if (equal major-mode 'php-mode)
-      'no-indent
-    nil))
-;;(add-hook 'electric-indent-functions 'electric-indent-ignore-python)
