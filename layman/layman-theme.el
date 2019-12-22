@@ -17,6 +17,7 @@
       ;;(require 'atom-one-dark-theme)
       ;;(require 'solarized-light-theme)
       ;;(require 'doom-molokai-theme)
+      (load "~/.emacs.d/elpa/darkplus-emacs/darkplus-theme.el")
     ))
 )
 (layman/register-hook 'common 'layman/set-theme)
