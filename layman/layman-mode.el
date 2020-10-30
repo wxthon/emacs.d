@@ -21,6 +21,9 @@
 
 (defun layman/mode-global ()
 
+  (require 'cc-mode)
+  (add-to-list 'c++-font-lock-extra-types "auto")
+
   ;; enable auto-complete with emacs
   (require 'auto-complete)
   (global-auto-complete-mode)
@@ -124,7 +127,40 @@
   (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
   (global-set-key (kbd "C-x C-f") #'helm-find-files)
   (helm-mode)
-  )
+
+  (font-lock-add-keywords
+   'c-mode
+   '(("\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("\\(\\sw+\\) ?(" 1 'font-lock-function-name-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("\\(\\sw+\\) ?=" 1 'font-lock-variable-name-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("\\(\\sw+\\) ?\\." 1 'font-lock-variable-name-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("\\(\\sw+\\) ?\\->" 1 'font-lock-variable-name-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("\\([[:upper:]\|_]+\\) ?(" 1 'font-lock-keyword-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("<\\(\\sw+\\)>" 1 'font-lock-type-face)))
+  (font-lock-add-keywords
+   'c++-mode
+   '(("\\([&]+\\)" 1 'font-lock-keyword-face)))
+
+  (autoload 'cpp-font-lock "cpp-font-lock")
+  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
+  (add-to-list 'auto-mode-alist '("\\.I\\'" . c++-mode))
+
+  (require 'modern-cpp-font-lock)
+  (modern-c++-font-lock-global-mode t)
+)
 
 (defun layman/c-or-c++-custom (mode-hook)
   (require 'google-c-style)
@@ -143,6 +179,7 @@
               ;; enaeble auto complete for c
               (add-to-list 'ac-sources 'ac-source-c-headers)
               (add-to-list 'ac-sources 'ac-source-c-header-symbols t)))
+  ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 )
 
 (defun layman/mode-custom ()
