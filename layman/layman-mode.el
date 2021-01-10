@@ -2,8 +2,8 @@
 (defun layman/mode-matches ()
   (mapcar
    (function (lambda (setting)
-			   (setq auto-mode-alist
-					 (cons setting auto-mode-alist))))
+	       (setq auto-mode-alist
+		     (cons setting auto-mode-alist))))
    '(("\\.xml$" . sgml-mode)
 	 ("\\.org\\'" . org-mode)
 	 ("\\\.bash" . sh-mode)
@@ -160,6 +160,13 @@
 
   (require 'modern-cpp-font-lock)
   (modern-c++-font-lock-global-mode t)
+
+  ;; if you want to change prefix for lsp-mode keybindings.
+  ;;(setq lsp-keymap-prefix "s-l")
+
+  ;;(require 'lsp-mode)
+  ;;(add-hook 'c++-mode-hook #'lsp)
+  ;;(add-hook 'c-mode-hook #'lsp)
 )
 
 (defun layman/c-or-c++-custom (mode-hook)
