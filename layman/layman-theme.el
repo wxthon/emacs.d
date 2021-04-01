@@ -9,9 +9,9 @@
 	;;(require 'atom-one-dark-theme)
 	;;(require 'solarized-light-theme)
 	;;(require 'solarized-dark-theme)
-		;;(require 'doom-molokai-theme)
-		;;(load "~/.emacs.d/elpa/darkplus-emacs/darkplus-theme.el")
-		(load "~/.emacs.d/layman/vscode-dark-plus-theme.el")
+	;;(require 'doom-molokai-theme)
+	;;(load "~/.emacs.d/elpa/darkplus-emacs/darkplus-theme.el")
+	(load "~/.emacs.d/layman/vscode-dark-plus-theme.el")
 	)
     (progn
       ;;(require 'zenburn-theme)

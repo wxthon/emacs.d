@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "helm-flymake" "20160609.1702" "helm interface for flymake" '((helm "1.0")))

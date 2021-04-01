@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "protobuf-mode" "20170526.1650" "major mode for editing protocol buffers." 'nil :commit "333b3ceab6b6d4b65ea7465b87321b805f838b36" :keywords '("google" "protobuf" "languages") :authors '(("Alexandre Vassalotti" . "alexandre@peadrop.com")) :maintainer '("Alexandre Vassalotti" . "alexandre@peadrop.com"))
