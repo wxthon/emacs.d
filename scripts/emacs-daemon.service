@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenSSH server daemon
+Documentation=man:emacs(1)
+After=rc-local.service plymouth-start.service systemd-user-sessions.service
+
+[Service]
+Type=simple
+User=wxthon
+Group=wxthon
+ExecStart=/usr/bin/emacs --daemon
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
