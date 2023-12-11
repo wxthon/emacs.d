@@ -34,13 +34,14 @@
       ;;  :ensure t
       ;;  :config
       ;;  (require 'solarized-zenburn-theme))
-      (use-package solarized-theme
-        :ensure t
-        :config
-        (require 'solarized-dark-theme))
+      ;;(use-package solarized-theme
+      ;;  :ensure t
+      ;;  :config
+      ;;  (require 'solarized-dark-theme))
       ;;(load-theme 'sanityinc-solarized-dark t)
       ;;(load "~/.emacs.d/layman/vscode-dark-plus-theme.el")
-      ;;(load-theme 'vscode-dark-plus t)
+      (require 'vscode-dark-plus-theme)
+      (load-theme 'vscode-dark-plus t)
       ;;(load-theme 'zeno t)
       ;;(require 'doom-molokai-theme)
       ;;(load "~/.emacs.d/elpa/darkplus-emacs/darkplus-theme.el")

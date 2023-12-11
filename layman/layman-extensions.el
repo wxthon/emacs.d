@@ -23,10 +23,12 @@
 ;;(require 'layman-magit)
 (require 'layman-cc)
 ;;(require 'layman-rust)
-;;(require 'layman-python)
+(require 'layman-python)
 ;;(require 'layman-treemacs)
 (require 'layman-google-c-style)
 (require 'layman-switch-window)
+(require 'layman-protobuf)
+(require 'layman-bazel)
 
 (provide 'layman-extensions)
 ;;; layman-extensions.el ends here

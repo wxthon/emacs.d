@@ -1,6 +1,5 @@
 
 ;;; Code:
-
 (require 'layman-base)
 
 ;; Menlo, Consolas, DejaVu Sans Mono, monospace, Inconsolata
@@ -16,11 +15,11 @@
   ;;(add-to-list 'default-frame-alist '(font . "Monaco-12"))
   (if (>= display-pixels-per-inch 72)
       (progn
-	(add-to-list 'initial-frame-alist '(font . "Noto Sans Mono-14"))
-	(add-to-list 'default-frame-alist '(font . "Noto Sans Mono-14")))
+	(add-to-list 'initial-frame-alist '(font . "Noto Sans Mono-10"))
+	(add-to-list 'default-frame-alist '(font . "Noto Sans Mono-10")))
     (progn
-      (add-to-list 'initial-frame-alist '(font . "Noto Sans Mono-11"))
-      (add-to-list 'default-frame-alist '(font . "Noto Sans Mono-11"))))
+      (add-to-list 'initial-frame-alist '(font . "Noto Sans Mono-10"))
+      (add-to-list 'default-frame-alist '(font . "Noto Sans Mono-10"))))
   ;;(add-to-list 'initial-frame-alist '(font . "Droid Sans Mono-12"))
   ;;(add-to-list 'default-frame-alist '(font . "Droid Sans Mono-12"))
   ;;(setq-default line-spacing nil)
